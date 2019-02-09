@@ -1,4 +1,4 @@
-LinkedList = require("../src/linked-list");
+LinkedList = require("../linked-list");
 
 describe("Linked List", () => {
   let LL;

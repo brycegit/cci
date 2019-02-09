@@ -21,13 +21,13 @@ class LinkedList {
 
       this.listTail.next = newTail;
 
-      this.resetTail();
+      this.replaceTail();
     } else {
       this.setInitialVal(val);
     }
   }
 
-  resetTail() {
+  replaceTail() {
     this.listTail.next.previous = this.listTail;
     this.listTail = this.listTail.next;
   }
