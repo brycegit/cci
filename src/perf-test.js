@@ -9,7 +9,7 @@ const ll = new LL();
 const set = new Set();
 
 // populate each with 1MM values
-for (let index = 0; index <= 1000000; index++) {
+for (let index = 0; index < 1000000; index++) {
   // add to each
   arr.push(index);
   ll.add(index);
