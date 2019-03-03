@@ -60,7 +60,7 @@ describe("Linked List", () => {
     LL.remove();
     LL.remove();
 
-    expect(LL.find(3)).toEqual({});
+    expect(LL.find(3)).toEqual(false);
 
     LL.add(3);
 

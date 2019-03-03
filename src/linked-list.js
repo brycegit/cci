@@ -54,15 +54,21 @@ class LinkedList {
   }
 
   find(val, node = this.listHead) {
-    if (node.val === val) {
-      return node;
+    let result;
+
+    while (result === undefined) {
+      if (node.val === val) {
+        result = node;
+      }
+
+      if (!node.next) {
+        result = false;
+      }
+
+      node = node.next;
     }
 
-    if (!node.next) {
-      return {};
-    }
-
-    return this.find(val, node.next);
+    return result;
   }
 
   get head() {
