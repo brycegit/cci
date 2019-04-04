@@ -1,15 +1,15 @@
 class LinkedList {
   constructor(val) {
-    this.createInitialHeadNode(val);
+    this._createInitialHeadNode(val);
   }
 
-  createInitialHeadNode(val) {
-    this.listHead = this.createNode(val);
+  _createInitialHeadNode(val) {
+    this.listHead = this._createNode(val);
     this.listTail = this.listHead;
     this.listTail.previous = {};
   }
 
-  createNode(val) {
+  _createNode(val) {
     return { val: val, next: {}, previous: {} };
   }
 
@@ -17,29 +17,29 @@ class LinkedList {
     const headHasValue = this.listHead.val;
 
     if (headHasValue) {
-      const newTail = this.createNode(val);
+      const newTail = this._createNode(val);
 
       this.listTail.next = newTail;
 
-      this.replaceTail();
+      this._replaceTail();
     } else {
-      this.setInitialVal(val);
+      this._setInitialVal(val);
     }
   }
 
-  replaceTail() {
+  _replaceTail() {
     this.listTail.next.previous = this.listTail;
     this.listTail = this.listTail.next;
   }
 
-  setInitialVal(val) {
+  _setInitialVal(val) {
     this.listHead.val = val;
     this.listTail = this.listHead;
   }
 
   remove() {
     if (this.listTail === this.listHead) {
-      this.removeHeadVal();
+      this._removeHeadVal();
     } else {
       this.listTail = this.listTail.previous;
 
@@ -47,8 +47,8 @@ class LinkedList {
     }
   }
 
-  removeHeadVal() {
-    this.listHead = this.createNode(null);
+  _removeHeadVal() {
+    this.listHead = this._createNode(null);
 
     this.listTail = this.listHead;
   }
